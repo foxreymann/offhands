@@ -1,0 +1,17 @@
+services:
+  - type: web
+    name: offhands
+    runtime: node
+    plan: free
+    buildCommand: ""
+    startCommand: node server.js
+    healthCheckPath: /health
+    envVars:
+      - key: NODE_VERSION
+        value: "22"
+      - key: HANDS_OFF
+        value: "true"
+      - key: PAYPAL_MODE
+        value: sandbox
+      - key: AGENT_TICK_INTERVAL_MS
+        value: "300000"

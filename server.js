@@ -149,8 +149,6 @@ const server = createServer(async (req, res) => {
   }
 })
 
-export default server
-
 async function backgroundTick() {
   try {
     const state = await getBusinessState()
@@ -170,8 +168,6 @@ async function bootstrap() {
       'HANDS_OFF=true — autonomous mode enabled on boot.')
   }
 
-  if (process.env.VERCEL) return
-
   server.listen(PORT, () => {
     console.log(`\n🧠 OffHands — autonomous neuroscience business`)
     console.log(`   WhatsApp webhook: POST /webhook/whatsapp`)
@@ -179,8 +175,10 @@ async function bootstrap() {
     console.log(`   Supabase: ${isSupabaseConfigured() ? '✓ connected' : '✗ in-memory demo'}`)
     console.log(`   Port: ${PORT}\n`)
 
-    const interval = parseInt(process.env.AGENT_TICK_INTERVAL_MS || '60000', 10)
-    setInterval(backgroundTick, interval)
+    if (!process.env.VERCEL) {
+      const interval = parseInt(process.env.AGENT_TICK_INTERVAL_MS || '60000', 10)
+      setInterval(backgroundTick, interval)
+    }
     backgroundTick()
   })
 }

@@ -1,10 +1,14 @@
 {
-  "buildCommand": "",
-  "installCommand": "",
+  "experimentalServices": {
+    "offhands": {
+      "entrypoint": "server.js",
+      "routePrefix": "/"
+    }
+  },
   "crons": [
     {
       "path": "/api/agents/tick",
-      "schedule": "*/5 * * * *"
+      "schedule": "0 12 * * *"
     }
   ]
 }

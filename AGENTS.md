@@ -1,0 +1,14 @@
+- Always store amounts in BigInt with 8 decimals. Logic to handle is in @libs/bigint.js
+- Always store prices in BigInt with 8 decimals. Logic to handle is in @libs/bigint.js
+- Only convert BigInt to strings for display
+
+- Think hard to write good, up to date, fast node.js code.
+- DRY.
+- Never throw an error, script should never stop. only console.error errors
+- Before any modification in a file read the file to get current code state
+- THIS IS IMPORTANT. Don't add semicolons at the end of JS code lines as this is not necessary
+- Use global variables. Like global.pairs is avaiable everywhere as pairs.
+- use camelCase
+- 2 spaces for indentation
+- always code for the newest JS features, assume we use latests node.js version
+- Business logic and display logic should be separated. Business logic returns data used by display logic in logs library

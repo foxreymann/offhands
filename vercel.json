@@ -1,0 +1,10 @@
+{
+  "buildCommand": "",
+  "installCommand": "",
+  "crons": [
+    {
+      "path": "/api/agents/tick",
+      "schedule": "*/5 * * * *"
+    }
+  ]
+}

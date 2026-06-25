@@ -1,0 +1,17 @@
+{
+  "name": "offhands",
+  "version": "1.0.0",
+  "description": "Autonomous AI micro-business — neuroscience agents sell Brain Fuel via WhatsApp while you don't",
+  "type": "module",
+  "engines": {
+    "node": ">=22.0.0"
+  },
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node --watch server.js",
+    "agents:run": "node agents/run.js",
+    "agents:cloud": "node agents/run.js cloud",
+    "setup:wassist": "node scripts/setup-wassist.js",
+    "db:migrate": "node scripts/apply-schema.js"
+  }
+}
